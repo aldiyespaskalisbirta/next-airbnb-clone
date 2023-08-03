@@ -5,7 +5,7 @@ interface MenuItemProps {
   label: string;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ onClick, label }) => {
+const MenuItem = ({ onClick, label }: MenuItemProps) => {
   return (
     <button
       onClick={onClick}
