@@ -11,14 +11,14 @@ interface ButtonProps {
   icon?: IconType;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   label,
   onClick,
   disabled,
   outline,
   small,
   icon: Icon,
-}) => {
+}: ButtonProps) => {
   return (
     <button
       onClick={onClick}
@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
       } ${
         small
           ? "py-1 text-sm font-light border-[1px]"
-          : "py-3 text-md font-semibold border-2"
+          : "py-2 text-md font-semibold border-2"
       }`}
     >
       {Icon && <Icon className="absolute left-4 top-3" />}
