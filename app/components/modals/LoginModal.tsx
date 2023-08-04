@@ -44,14 +44,12 @@ const LoginModal = () => {
     }).then((callback) => {
       setIsLoading(false);
 
-      if (callback?.ok) {
+      if (callback?.error) {
+        toast.error(callback.error);
+      } else if (callback?.ok) {
         toast.success("Logged in");
         router.refresh();
         loginModal.onClose();
-      }
-
-      if (callback?.error) {
-        toast.error(callback.error);
       }
     });
   };
@@ -86,7 +84,7 @@ const LoginModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => signIn('google')}
+        onClick={() => signIn("google")}
       />
       <Button
         outline
