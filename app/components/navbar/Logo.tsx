@@ -6,11 +6,11 @@ import Image from "next/image";
 const Logo = () => {
   return (
     <Image
-      src="/images/logo.png"
+      alt="logo"
+      className="hidden md:block cursor-pointer"
       height={100}
       width={100}
-      alt="logo"
-      className="text-rose-500 hidden md:block cursor-pointer"
+      src="/images/logo.png"
     />
   );
 };
