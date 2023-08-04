@@ -49,8 +49,16 @@ const Input = ({
       <label
         className={`absolute text-md transition duration-150 transform -translate-y-3 top-4 z-10 origin-[0] ${
           formatPrice ? "left-9" : "left-4"
-        } peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 ${
-          errors[id] ? "text-rose-500" : "text-zinc-400"
+        } 
+        peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+        peer-focus:border-x-2
+        peer-focus:bg-white
+        peer-focus:px-2
+        peer-focus:border-black
+        peer-focus:scale-105 peer-focus:-translate-y-7 ${
+          errors[id]
+            ? "text-rose-500 peer-focus:border-rose-500"
+            : "text-zinc-400"
         }`}
       >
         {label}

@@ -40,7 +40,7 @@ const RegisterModal = () => {
       })
       .catch((err) => {
         toast.error("Someting went wrong.");
-        // console.log(err);
+        console.log(err);
       })
       .finally(() => {
         setIsLoading(false);
@@ -93,6 +93,17 @@ const RegisterModal = () => {
         icon={AiFillGithub}
         onClick={() => {}}
       />
+      <div className="flex justify-center gap-2 mt-4">
+        <h2 className="text-neutral-500 font-light">
+          Already have an account?
+        </h2>
+        <button
+          onClick={registerModal.onClose}
+          className="text-neutral-800 cursor-pointer hover:underline"
+        >
+          Log in
+        </button>
+      </div>
     </div>
   );
 
@@ -100,7 +111,7 @@ const RegisterModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={registerModal.isOpen}
-      title="Log in or sign up"
+      title="Register"
       actionLabel="Continue"
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
